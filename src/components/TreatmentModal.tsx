@@ -56,7 +56,7 @@ export default function TreatmentModal({
       className="flex flex-col"
       onCancel={() => setShow(false)}
       footer={[
-        <Button key="save" type="primary" onClick={() => {}}>
+        <Button key="save" type="primary" onClick={() => setShow(false)}>
           Хадгалах
         </Button>,
       ]}
