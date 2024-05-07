@@ -31,11 +31,11 @@ export default function CardModal({
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response.data);
         if (response.data) {
           refetch();
           setLoading(false);
           setShow(false);
+          message.success("Амжилттай шинэчлэгдлээ.", 2);
         }
       } catch (err) {
         setLoading(false);
@@ -44,7 +44,6 @@ export default function CardModal({
     },
     [refetch, setShow, token]
   );
-  console.log(_id);
   return (
     <Modal
       open={show}

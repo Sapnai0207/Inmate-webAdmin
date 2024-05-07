@@ -153,6 +153,7 @@ export default function Index() {
       console.log(res);
       setFinishLoading(false);
       form.resetFields();
+      message.success("Амжилттай хадгалагдлаа", 2);
       setHistory([]);
     } catch (err) {
       message.error("aldaa", 2);
@@ -177,6 +178,7 @@ export default function Index() {
           }
         );
         console.log("Delete diagnose rsponse: ", resp);
+        message.success("Онош устгагдлаа");
       } catch (error) {
         message.error("error");
       }

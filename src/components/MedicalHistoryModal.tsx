@@ -1,6 +1,6 @@
-import React, { Dispatch } from "react";
+import React, { Dispatch, useState } from "react";
 
-import { Button, DatePicker, Form, Input, Modal, Switch } from "antd";
+import { Button, DatePicker, Form, Input, Modal, Switch, message } from "antd";
 import { MedicalHistoryType } from "@/utils/types";
 import { useForm } from "antd/es/form/Form";
 import dayjs from "dayjs";
@@ -22,7 +22,7 @@ export default function MedicalHistoryModal({
   const [form] = useForm<MedicalHistoryType>();
   let token;
   let response;
-
+  const [loading, setLoading] = useState(false);
   async function onFinish(values: MedicalHistoryType) {
     //@ts-ignore -> aldaa untraadag
     setHistory((currentHistory: MedicalHistoryType[]) => {
@@ -30,7 +30,7 @@ export default function MedicalHistoryModal({
       values.completelyRecovered = false; // emchilge burtgej baiga bolhor ugasa edgeegu gj uzle
       return [...currentHistory, values];
     });
-    setIsOpen(false);
+    setLoading(true);
     try {
       token = localStorage.getItem("token");
       console.log("add trtment token", token);
@@ -49,14 +49,26 @@ export default function MedicalHistoryModal({
           Authorization: `Bearer ${token}`,
         },
       });
+      setLoading(false);
+      setIsOpen(false);
+      form.resetFields();
       console.log("add diagnose response: ", response);
+      message.success("Онош амжилттай нэмэгдлээ", 2);
     } catch (error) {
       console.log("ERROR", error);
+      form.resetFields();
+      setIsOpen(false);
+      setLoading(false);
     }
   }
 
   return (
-    <Modal open={isOpen} onCancel={() => setIsOpen(false)} footer={[]}>
+    <Modal
+      open={isOpen}
+      onCancel={() => setIsOpen(false)}
+      footer={[]}
+      confirmLoading={loading}
+    >
       <Form form={form} layout="vertical" onFinish={onFinish}>
         <Form.Item
           name="diseaseDescription"

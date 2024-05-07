@@ -69,17 +69,19 @@ export default function AddTreatmentModal({
           },
         }
       );
-      const sendNotif = await axios.post("/api/admin/sendNotification", {
-        deviceToken: deviceToken,
-        registerNo: registerNo,
-        title: treatment.title,
-        description: treatment.information,
-      });
-      console.log(response.data, "data");
+      if (!!deviceToken && deviceToken.length > 0) {
+        const sendNotif = await axios.post("/api/admin/sendNotification", {
+          deviceToken: deviceToken,
+          registerNo: registerNo,
+          title: treatment.title,
+          description: treatment.information,
+        });
+      }
       setLoading(false);
       form.resetFields();
       refetch();
       setShow(false);
+      message.success("Амжилттай эмчилгээ нэмэгдлээ", 2);
     } catch (err) {
       message.error("Алдаа гарлаа", 2);
       setLoading(false);

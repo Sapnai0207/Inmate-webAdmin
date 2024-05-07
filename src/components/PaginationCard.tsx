@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-import { SearchTreatment } from "./NursePage";
 import CardModal from "./CardModal";
 import { Treatment } from "@/services/db/types";
-import dayjs from "dayjs";
 
 type PaginationCardProps = {
   refetch: () => void;
