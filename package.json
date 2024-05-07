@@ -1,0 +1,63 @@
+{
+  "name": "inmate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "env-cmd -f ./.env/local.env next dev",
+    "clean": "rm -rf tsconfig.prod.tsbuildinfo && rm -rf dist",
+    "start": "env-cmd -f ./.env/local.env next dev",
+    "serve": "env-cmd -f ./.env/local.env node dist/index.js",
+    "build:server": "tsc -p tsconfig.prod.json",
+    "build:next": "env-cmd -f ./.env/local.env next build",
+    "build": "npm run build:server && npm run build:next"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "antd": "^5.16.4",
+    "axios": "^0.27.2",
+    "bcrypt-nodejs": "^0.0.3",
+    "dayjs": "^1.11.5",
+    "firebase": "^10.11.1",
+    "firebase-admin": "^12.1.0",
+    "http": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "log4js": "^6.9.1",
+    "mongodb": "^4.10.0",
+    "next": "^14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "recharts": "^2.12.6",
+    "swiper": "^11.1.1",
+    "vercel": "^34.1.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.22",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.1",
+    "ts-standard": "^12.0.2",
+    "tsx": "^4.7.3",
+    "typescript": "^5"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "ts-standard": {
+    "ignore": [
+      "next.config.js",
+      "next-env.d.ts"
+    ]
+  }
+}
