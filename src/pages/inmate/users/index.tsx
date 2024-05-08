@@ -242,7 +242,7 @@ export default function Index() {
       />
       {selected === null && <TreatmentSection setSelect={setSelected} />}
       {selected === 2 && (
-        <div className="w-full h-full bg-[#fadcc3] flex flex-col justify-center">
+        <div className="w-full h-full bg-[#ffffff] flex flex-col justify-center">
           <Form
             form={form}
             layout="vertical"
@@ -435,7 +435,7 @@ export default function Index() {
         </div>
       )}
       {selected === 1 && (
-        <div className="w-full h-full bg-[#fadcc3] flex flex-col">
+        <div className="w-full h-full bg-[#ffffff] flex flex-col">
           <div className="relative self-center w-full my-10 flex gap-4 justify-center">
             <input
               type="search"

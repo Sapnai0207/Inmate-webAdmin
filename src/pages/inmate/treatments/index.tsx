@@ -56,7 +56,7 @@ export default function Index() {
 
   return (
     <SideBar selectedId="treatments">
-      <div className="w-full h-full bg-[#fadcc3] flex-col p-8">
+      <div className="w-full h-full bg-[#ffffff] flex-col p-8">
         <Search
           placeholder="Хайх"
           className="h-[30px] w-1/3 mb-8"

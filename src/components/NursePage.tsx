@@ -80,7 +80,7 @@ export default function NursePage() {
   };
 
   return (
-    <div className="h-screen w-screen bg-[#fadcc3] flex flex-col">
+    <div className="h-screen w-screen bg-[#ffffff] flex flex-col">
       <div className="w-full bg-orange-200 h-16 text-center font-bold text-[17px] text-black flex items-center justify-center mb-6">
         Эмчилгээны лист
       </div>

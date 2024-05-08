@@ -117,7 +117,7 @@ export default function DoctorPage() {
 
   return (
     <SideBar selectedId="home">
-      <div className="h-full w-full bg-[#fadcc3] flex flex-col p-8 items-center">
+      <div className="h-full w-full bg-[#ffffff] flex flex-col p-8 items-center">
         {treatLoading || custLoading ? (
           <div
             role="status"

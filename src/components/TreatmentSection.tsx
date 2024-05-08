@@ -7,7 +7,7 @@ type TreatmentSectionProps = {
 
 export default function TreatmentSection({ setSelect }: TreatmentSectionProps) {
   return (
-    <div className="w-full h-full bg-[#fadcc3] flex items-center justify-center flex-col gap-8">
+    <div className="w-full h-full bg-[#ffffff] flex items-center justify-center flex-col gap-8">
       <Tooltip title="Шинээр хэрэглэгч бүртгэх болон хэвтэн эмчлүүлэх бүртгэл хийх">
         <button
           className="w-[250px] bg-[#febf00] rounded h-14 font-bold animate-fade transform transition duration-500 hover:scale-110"
