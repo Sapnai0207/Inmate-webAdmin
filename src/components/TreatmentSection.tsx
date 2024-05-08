@@ -21,7 +21,7 @@ export default function TreatmentSection({ setSelect }: TreatmentSectionProps) {
           className="w-[250px] bg-[#febf00] rounded h-14 font-bold animate-fade transform transition duration-500 hover:scale-110"
           onClick={() => setSelect(1)}
         >
-          Өвчтөны бүртгэл шинэчлэх
+          Өвчтөний бүртгэл шинэчлэх
         </button>
       </Tooltip>
     </div>
