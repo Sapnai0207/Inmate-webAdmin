@@ -42,6 +42,7 @@ export default function AddTreatmentModal({
     const treatment = TreatmentList[form.getFieldValue("treatment")];
     const startHour = form.getFieldValue("startDate");
     const endHour = form.getFieldValue("endDate");
+    const roomNumber = form.getFieldValue("roomNumber");
     setLoading(true);
     const startDate =
       dayjs(date).format("YYYY-MM-DD") +
@@ -75,6 +76,8 @@ export default function AddTreatmentModal({
           registerNo: registerNo,
           title: treatment.title,
           description: treatment.information,
+          date: date,
+          roomNumber: roomNumber + "",
         });
       }
       setLoading(false);

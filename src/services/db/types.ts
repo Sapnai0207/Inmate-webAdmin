@@ -16,6 +16,8 @@ export interface Notification {
   registerNo: string;
   title: string;
   description: string;
+  date: string;
+  roomNumber: string;
 }
 
 export interface User {

@@ -14,7 +14,7 @@ const SECRET_KEY = process.env.SECRET_KEY ?? "";
 export const authService: AuthService = {
   addNotification: async (req) => {
     const conn = await MongoDatabase();
-    const { description, registerNo, title } = req;
+    const { description, registerNo, title, date, roomNumber } = req;
 
     if (isNil(registerNo)) {
       throw new ApiException(
@@ -27,6 +27,8 @@ export const authService: AuthService = {
       description: description,
       registerNo: registerNo,
       title: title,
+      date: date,
+      roomNumber: roomNumber,
     });
     return {
       _id: insertedId,

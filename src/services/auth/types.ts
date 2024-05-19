@@ -10,6 +10,8 @@ export interface NewNotificationReq {
   title: string;
   description: string;
   registerNo: string;
+  date: string;
+  roomNumber: string;
 }
 
 export interface NewNotificationRes {

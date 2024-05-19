@@ -7,6 +7,8 @@ export interface NotifReq {
   title: string;
   description: string;
   registerNo: string;
+  date: string;
+  roomNumber: string;
 }
 
 if (!admin.apps.length) {
@@ -23,12 +25,15 @@ export default async function handler(
   if (req.method === "POST") {
     try {
       const app = admin.app();
-      const { description, title, deviceToken, registerNo } = req.body;
+      const { description, title, deviceToken, registerNo, date, roomNumber } =
+        req.body;
 
       const newNotif = await authService.addNotification({
         description: description,
         registerNo: registerNo,
         title: title,
+        date: date,
+        roomNumber: roomNumber,
       });
 
       const response = await app.messaging().send({
