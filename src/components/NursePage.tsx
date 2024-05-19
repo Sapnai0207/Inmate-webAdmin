@@ -83,7 +83,7 @@ export default function NursePage() {
     <div className="h-screen w-screen bg-[#ffffff] flex flex-col">
       <div className="w-full bg-orange-200 h-16 text-center font-bold text-[17px] text-black flex items-center justify-center mb-6">
         <div> Эмчилгээны лист </div>
-        <div><a href="/"> Гарах </a></div>
+        <div><Link href="/">Гарах</Link></div>
       </div>
       <Search searchTerm={searchTerm} onSearchChange={handleSearchChange} />
       {loading ? (
