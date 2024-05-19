@@ -44,8 +44,8 @@ export default async function handler(
         },
         android: {
           notification: {
-            title: newNotif.title,
-            body: newNotif.description,
+            title: "Шинэ эмчилгээ нэмэгдлээ",
+            body: newNotif.title,
           },
         },
       });
