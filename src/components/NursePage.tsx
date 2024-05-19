@@ -6,6 +6,7 @@ import PaginationCard from "./PaginationCard";
 import axios from "axios";
 import { message } from "antd";
 import { Treatment } from "@/services/db/types";
+import Link from "next/link";
 
 export interface SearchTreatment {
   userName: string;
