@@ -38,7 +38,10 @@ export default async function handler(
 
       const response = await app.messaging().send({
         token: deviceToken,
-        notification: { title: newNotif.title, body: newNotif.description },
+        notification: {
+          title: "Шинэ эмчилгээ нэмэгдлээ",
+          body: newNotif.title,
+        },
         android: {
           notification: {
             title: newNotif.title,
