@@ -100,8 +100,7 @@ export default function DoctorPage() {
         }
       }
     });
-    data.sort();
-    data.reverse();
+    data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     return data;
   }, [treatment]);
 
