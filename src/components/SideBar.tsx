@@ -4,6 +4,7 @@ import {
   UserOutlined,
   HomeOutlined,
   MedicineBoxOutlined,
+  LogoutOutlined
 } from "@ant-design/icons";
 import Link from "next/link";
 
@@ -40,6 +41,11 @@ export default function SideBar({
               icon: <MedicineBoxOutlined />,
               label: <Link href="/inmate/treatments">Эмчилгээ</Link>,
             },
+            {
+              key: "logOut",
+              icon: <LogoutOutlined />,
+              label: <Link href='/'>Гарах</Link>
+            }
           ]}
         />
       </Sider>
